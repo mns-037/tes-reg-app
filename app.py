@@ -32,7 +32,7 @@ with st.form('Prediksi Asuransi'):
 
 	
 if st.checkbox('Lihat Model'):
-  st.write('Y = {} * x1 + {} * x2 + {}'.format(model.coef_[0], model.coef_[1], model.intercept_)
+  st.write('Y = {} * x1 + {} * x2 + {}'.format(model.coef_[0], model.coef_[1], model.intercept_))
   st.write('Jumlah Fitur: {}'.format(model.n_features_in_))
   st.write('Coefficient: {}'.format(model.coef_))
   st.write('Intercept: {}'.format(model.intercept_))
