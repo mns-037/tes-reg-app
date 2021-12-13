@@ -25,10 +25,13 @@ with st.form('Prediksi Asuransi'):
     #input_data = np.asarray([tingkat_pelayanan, jumlah_peserta_aktif])
     #scaled_input_data = input_data #scl.transform(input_data)
     #st.info('Hasil Prediksi: {}'.format(model.predict(scaled_input_data))) #apa??
+    st.info('Coefficient: {}'.format(model.coef_))
+    st.info('Intercept: {}'.format(model.intercept_))
+    st.info('n_feature: {}'.format(model.n_features_in_))
+    st.info('feature_name: {}'.format(model.feature_names_in_))
 	
-    if st.checkbox('Lihat Model'):
-      st.write('Coefficient: {}'.format(model.coef_))
-      st.write('Intercept: {}'.format(model.intercept_))
-      st.write('n_feature: {}'.format(model.n_features_in_))
-      st.write('feature_name: {}'.format(model.feature_names_in_))
-	
+if st.checkbox('Lihat Model'):
+  st.write('Coefficient: {}'.format(model.coef_))
+  st.write('Intercept: {}'.format(model.intercept_))
+  st.write('n_feature: {}'.format(model.n_features_in_))
+  st.write('feature_name: {}'.format(model.feature_names_in_))	
