@@ -26,6 +26,6 @@ with st.form('Prediksi Asuransi'):
     st.info('Hasil Predikisi: {}'.format(model.predict(scaled_input_data))) #apa??
 	
     if st.checkbox('Lihat Model'):
-	  st.write('Coefficient: {}'.format(model.coef_))
-	  st.write('Intercept: {}'.format(model.intercept_))
+      st.write('Coefficient: {}'.format(model.coef_))
+      st.write('Intercept: {}'.format(model.intercept_))
 	
