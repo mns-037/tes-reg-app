@@ -4,11 +4,15 @@ import numpy as np
 import sklearn
 import pickle
 
+st.set_page_config(page_title='Aplikasi Regresi Asuransi', layout='wide')
 
 # Load necessary file
 model = pickle.load(open('model.pkl', 'rb'))
+#scl  = pickle.load(open('scl.pkl', 'rb'))
+
+# Title
 st.write('# Deskripsi App')
-st.write('Ini adalah deployment web app dari model regresi untuk prediksi asuransi')
+st.write('Ini adalah deployment web app dari model regresi untuk prediksi asuransi.')
  
 with st.form('Prediksi Asuransi'):
   st.markdown('## Masukkan Input')
@@ -17,6 +21,11 @@ with st.form('Prediksi Asuransi'):
   submitted = st.form_submit_button('Lakukan Prediksi')
   
   if submitted:
-    st.info('Hasil Predikisi: ') #apa??
-    st.info(model)
+    input_data = pd.DataFrame({'x1': [tingkat_pelayanan], 'x2':[jumlah_peserta_aktif]})
+	scaled_input_data = input_data #scl.transform(input_data)
+    st.info('Hasil Predikisi: {}'.format(model.predict(scaled_input_data))) #apa??
+	
+    if st.checkbox('Lihat Model'):
+	  st.write('Coefficient: {}'.format(model.coef_))
+	  st.write('Intercept: {}'.format(model.intercept_))
 	
