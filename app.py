@@ -33,7 +33,7 @@ with st.form('Prediksi Asuransi'):
     input_data = pd.DataFrame({'x1': [tingkat_pelayanan_], 'x2':[jumlah_peserta_aktif]})
     #input_data = np.asarray([[tingkat_pelayanan_, jumlah_peserta_aktif]])
     scaled_input_data = scl.transform(input_data)
-    st.info('Hasil Prediksi Unit Cost: {}'.format(model.predict(scaled_input_data[0]))) #apa??
+    st.info('Hasil Prediksi Unit Cost: {}'.format(model.predict(scaled_input_data)[0])) #apa??
     #st.info('Coefficient: {}'.format(model.coef_))
     #st.info('Intercept: {}'.format(model.intercept_))
     #st.info('n_feature: {}'.format(model.n_features_in_))
