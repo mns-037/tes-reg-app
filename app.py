@@ -21,9 +21,10 @@ with st.form('Prediksi Asuransi'):
   submitted = st.form_submit_button('Lakukan Prediksi')
   
   if submitted:
-    input_data = pd.DataFrame({'x1': [tingkat_pelayanan], 'x2':[jumlah_peserta_aktif]})
+    # input_data = pd.DataFrame({'x1': [tingkat_pelayanan], 'x2':[jumlah_peserta_aktif]})
+    input_data = np.asarray(tingkat_pelayanan, jumlah_peserta_aktif)
     scaled_input_data = input_data #scl.transform(input_data)
-    st.info('Hasil Predikisi: {}'.format(model.predict(scaled_input_data))) #apa??
+    st.info('Hasil Prediksi: {}'.format(model.predict(scaled_input_data))) #apa??
 	
     if st.checkbox('Lihat Model'):
       st.write('Coefficient: {}'.format(model.coef_))
