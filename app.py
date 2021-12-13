@@ -22,7 +22,7 @@ with st.form('Prediksi Asuransi'):
   
   if submitted:
     input_data = pd.DataFrame({'x1': [tingkat_pelayanan], 'x2':[jumlah_peserta_aktif]})
-	scaled_input_data = input_data #scl.transform(input_data)
+    scaled_input_data = input_data #scl.transform(input_data)
     st.info('Hasil Predikisi: {}'.format(model.predict(scaled_input_data))) #apa??
 	
     if st.checkbox('Lihat Model'):
