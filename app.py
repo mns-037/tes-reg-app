@@ -8,9 +8,11 @@ st.set_page_config(page_title='Aplikasi Regresi Unit Cost', layout='wide')
 
 # Load necessary file
 model = pickle.load(open('model_baru.pkl', 'rb'))
-with open('scl_std.pickle', "rb") as f:
+scl  = pickle.load(open('std_scl_new.pkl', 'rb'))
+
+#with open('scl_std.pickle', "rb") as f:
   #scl  = pickle.load(open('scl_std.pickle', 'rb'))
-  scl = pickle.load(f)
+#  scl = pickle.load(f)
 #scl  = pickle.load(open('scl_std.pickle', 'rb'))
 
 # Title
