@@ -19,5 +19,5 @@ with st.form('For Assurance Prediction'):
   
   if submitted:
     st.info('Hasil Predikisi: ') #apa??
-	st.info(model)
+    st.info(model)
 	
